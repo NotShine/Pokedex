@@ -6,13 +6,24 @@ import { useState } from "react";
 
 const App = () => {
   const [selectedPokemon, setSelectedPokemon] = useState(0);
+  const [showSideMenu, setShowSideMenu] = useState(true)
+
+  function handleToggleMenu(){
+setShowSideMenu(!showSideMenu)
+  }
+
+  function handleCloseMenu (){
+    setShowSideMenu(true)
+  }
   return (
     <>
-      <Header />
+      <Header handleToggleMenu={handleToggleMenu} />
       
       <SideNav
         selectedPokemon={selectedPokemon}
         setSelectedPokemon={setSelectedPokemon}
+        handleCloseMenu={handleCloseMenu}
+        showSideMenu={showSideMenu}
       />
       <PokeCard selectedPokemon={selectedPokemon} />
     </>
