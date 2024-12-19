@@ -111,6 +111,8 @@ const PokeCard = (props) => {
     );
   }
 
+  
+
   return (
     <div className="poke-card">
       {skill && (
